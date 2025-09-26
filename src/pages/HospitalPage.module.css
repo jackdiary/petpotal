@@ -1,0 +1,463 @@
+/* 병원 관련 스타일 */
+
+/* 병원 페이지 컨테이너 */
+.hospitalContainer {
+  background: linear-gradient(135deg, #ffffff 0%, #ffffff 100%);
+  min-height: 100vh;
+  padding: 75px 0 48px 0; /* 140px (헤더 마진) + 48px (기존 패딩) */
+}
+
+.statusContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 50vh;
+  font-size: 1.2rem;
+  color: #666;
+}
+
+.error {
+  color: red;
+}
+
+/* 병원 카드 스타일 */
+.hospitalCard {
+  background: #8b0606;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0, 168, 255, 0.12);
+  overflow: hidden;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.hospitalCard:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 16px 40px rgba(0, 168, 255, 0.2);
+}
+
+.hospitalCard::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #00a8ff, #0078d4);
+}
+
+.hospitalImage {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-bottom: 1px solid #00406e;
+}
+
+.hospitalContent {
+  padding: 24px;
+}
+
+.hospitalName {
+  color: #0078d4;
+  font-size: 1.125rem;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.hospitalLocation {
+  color: #2f3542;
+  font-size: 0.875rem;
+  margin-bottom: 16px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.hospitalLocation::before {
+  content: '📍';
+  font-size: 1em;
+}
+
+.hospitalDescription {
+  color: #2f3542;
+  font-size: 0.875rem;
+  line-height: 1.6;
+  margin-bottom: 16px;
+}
+
+/* 병원 운영시간 */
+.hospitalHours {
+  background: #e3f2fd;
+  padding: 16px;
+  border-radius: 4px;
+  margin-bottom: 16px;
+  border-left: 3px solid #00a8ff;
+}
+
+.hospitalHoursTitle {
+  color: #0078d4;
+  font-size: 0.875rem;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.hospitalHoursText {
+  color: #2f3542;
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+
+/* 응급실 운영 상태 */
+.hospitalEmergencyStatus {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 16px;
+  padding: 8px;
+  border-radius: 4px;
+}
+
+.hospitalEmergencyStatus.open {
+  background: rgba(46, 213, 115, 0.1);
+  color: #2ed573;
+}
+
+.hospitalEmergencyStatus.closed {
+  background: rgba(255, 71, 87, 0.1);
+  color: #ff4757;
+}
+
+.hospitalEmergencyIcon {
+  font-size: 1.1em;
+}
+
+.hospitalEmergencyText {
+  font-size: 0.875rem;
+  font-weight: 600;
+}
+
+/* 병원 전문 분야 태그 */
+.hospitalSpecialties {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.hospitalSpecialtyTag {
+  background: #e3f2fd;
+  color: #0078d4;
+  padding: 4px 8px;
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.hospitalSpecialtyTag.general::before {
+  content: '🏥';
+}
+
+.hospitalSpecialtyTag.emergency::before {
+  content: '🚑';
+}
+
+.hospitalSpecialtyTag.surgery::before {
+  content: '⚕️';
+}
+
+.hospitalSpecialtyTag.dental::before {
+  content: '🦷';
+}
+
+.hospitalSpecialtyTag.dermatology::before {
+  content: '🔬';
+}
+
+/* 병원 평점 및 리뷰 */
+.hospitalRating {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.hospitalStars {
+  color: #ffd700;
+  font-size: 0.875rem;
+}
+
+.hospitalRatingText {
+  color: #2f3542;
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+.hospitalReviews {
+  color: #2f3542;
+  font-size: 0.8rem;
+  opacity: 0.7;
+  margin-left: 8px;
+}
+
+/* 병원 연락처 정보 */
+.hospitalContact {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 16px;
+  color: #2f3542;
+  font-size: 0.875rem;
+}
+
+.hospitalContact::before {
+  content: '📞';
+  font-size: 1em;
+}
+
+/* 병원 서비스 아이콘 */
+.hospitalServices {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 16px;
+  flex-wrap: wrap;
+}
+
+.hospitalServiceIcon {
+  background: #e3f2fd;
+  color: #0078d4;
+  padding: 6px 10px;
+  border-radius: 4px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.hospitalServiceIcon.parking::before {
+  content: '🅿️';
+}
+
+.hospitalServiceIcon.pharmacy::before {
+  content: '💊';
+}
+
+.hospitalServiceIcon.xray::before {
+  content: '🩻';
+}
+
+.hospitalServiceIcon.lab::before {
+  content: '🔬';
+}
+
+/* 병원 버튼 스타일 */
+.hospitalBtn {
+  background: linear-gradient(135deg, #00a8ff, #0078d4);
+  color: #ffffff;
+  padding: 16px 24px;
+  border-radius: 9999px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  transition: all 0.3s ease;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+}
+
+.hospitalBtn:hover {
+  transform: scale(1.02);
+  box-shadow: 0 8px 16px rgba(0, 168, 255, 0.3);
+}
+
+.hospitalBtnEmergency {
+  background: linear-gradient(135deg, #ff4757, #ff3838);
+  margin-top: 8px;
+}
+
+/* 병원 필터 섹션 */
+.hospitalFilters {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  margin-bottom: 72px;
+  flex-wrap: wrap;
+}
+
+.hospitalFilterBtn {
+  background: #ffffff;
+  color: #0078d4;
+  border: 2px solid #e3f2fd;
+  padding: 16px 24px;
+  border-radius: 9999px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.hospitalFilterBtn:hover,
+.hospitalFilterBtn.active {
+  background: #0078d4;
+  color: #ffffff;
+  border-color: #0078d4;
+}
+
+/* 병원 그리드 레이아웃 */
+.hospitalGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 24px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+/* 반응형 디자인 */
+@media (max-width: 768px) {
+  .hospitalContainer {
+    padding: 158px 0 48px 0; /* 110px (모바일 헤더 마진) + 48px (기존 패딩) */
+  }
+
+  .hospitalTitle {
+    text-align: center;
+    font-size: 2rem;
+  }
+  
+  .hospitalGrid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+  
+  .hospitalFilters {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .hospitalSpecialties,
+  .hospitalServices {
+    justify-content: center;
+  }
+  .mapWrapper {
+    width: 100vw;
+    height: 40vh;
+    border-radius: 0;
+    margin-bottom: var(--spacing-lg);
+  }
+}
+
+/* --- 공통 페이지 스타일 (From Page.module.css) --- */
+
+.pageHeader {
+  text-align: center;
+  margin-bottom: 40px;
+  padding-top: 40px;
+}
+
+.pageTitle {
+  font-size: 2.8rem;
+  font-weight: 800;
+  color: #2c3e50;
+  margin-bottom: 12px;
+}
+
+.pageSubtitle {
+  font-size: 1.2rem;
+  color: #7f8c8d;
+  margin: 0;
+}
+
+.mapWrapper {
+  position: relative;
+  width: 900px;
+  max-width: 96vw;
+  margin: 0 auto 40px auto;
+  height: 380px;
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 8px 24px rgba(212, 165, 116, 0.15);
+  z-index: 1;
+}
+
+.filtersOnMap {
+  position: absolute;
+  top: var(--container-padding);
+  left: 50%;
+  transform: translateX(-50%);
+  width: calc(100% - 40px);
+  z-index: var(--z-dropdown);
+  background-color: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-lg);
+  padding: var(--spacing-md);
+  max-width: 900px;
+  box-sizing: border-box;
+}
+.filterGroup {
+  margin-bottom: var(--spacing-md);
+  padding: 0 var(--spacing-xs);
+}
+.filterGroup:last-child {
+  margin-bottom: 0;
+}
+.filterLabel {
+  display: block;
+  margin-bottom: var(--spacing-xs);
+  font-weight: var(--font-semibold);
+  font-size: var(--text-sm);
+  color: var(--text-medium);
+}
+.filterInputWrapper {
+  display: flex;
+  align-items: center;
+  background: white;
+  border-radius: 8px;
+  padding: 8px 12px;
+  border: 1px solid #ddd;
+  margin-bottom: 8px;
+}
+.filterInput {
+  border: none;
+  outline: none;
+  flex: 1;
+  font-size: 14px;
+  background: transparent;
+}
+.pillButtonContainer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.pillButton {
+  padding: var(--btn-padding-sm);
+  border-radius: var(--radius-2xl);
+  border: 1px solid var(--border-medium);
+  background: var(--bg-white);
+  color: var(--text-medium);
+  cursor: pointer;
+  font-size: var(--text-sm);
+  transition: var(--transition-base);
+}
+.pillButton.active,
+.pillButton:hover {
+  background: var(--theme-hospital-primary);
+  color: var(--bg-white);
+  border-color: var(--theme-hospital-primary);
+}
+
+@media (max-width: 768px) {
+  .mapWrapper {
+    width: 100vw;
+    height: 40vh;
+    border-radius: 0;
+  }
+  .filtersOnMap {
+    left: 10px;
+    right: 10px;
+    width: calc(100% - 20px);
+    transform: none;
+  }
+}

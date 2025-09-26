@@ -1,0 +1,206 @@
+/* src/pages/GroomingDetailPage.module.css */
+
+:root {
+  --grooming-primary: #E89A8D;
+  --grooming-bg: #FFFBF7;
+  --grooming-text: #5D5350;
+  --grooming-tag-bg: #FDF0E9;
+  --grooming-tag-text: #B5654E;
+}
+
+.detailPageContainer {
+  background-color: var(--grooming-bg);
+  padding-bottom: 80px;
+}
+
+/* --- Hero Section --- */
+.heroSection {
+  position: relative;
+  height: 450px;
+  background-color: #EAE0D9;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.heroImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(0.8) saturate(1.1);
+}
+
+.heroContent {
+  position: absolute;
+  text-align: center;
+  color: #fff;
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.5);
+}
+
+.heroContent h1 {
+  font-size: 3.5rem;
+  font-weight: 800;
+  margin: 0;
+}
+
+.heroContent p {
+  font-size: 1.3rem;
+  opacity: 0.95;
+  margin-top: 12px;
+}
+
+/* --- Main Content Layout --- */
+.mainContent {
+  display: flex;
+  gap: 40px;
+  max-width: 1100px;
+  margin: -100px auto 0;
+  padding: 0 24px;
+  position: relative;
+  z-index: 10;
+}
+
+.infoColumn {
+  flex: 1;
+  background: #fff;
+  padding: 40px;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  border: 1px solid #F0EBE8;
+}
+
+.bookingColumn {
+  flex: 0 0 320px;
+  position: sticky;
+  top: 100px;
+  height: fit-content;
+}
+
+/* --- Info Blocks --- */
+.infoBlock {
+  margin-bottom: 40px;
+}
+
+.infoBlock:last-child {
+  margin-bottom: 0;
+}
+
+.infoBlock h3 {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--grooming-text);
+  margin-bottom: 20px;
+  padding-bottom: 12px;
+  border-bottom: 2px solid var(--grooming-primary);
+  display: inline-block;
+}
+
+.description {
+  font-size: 1.05rem;
+  line-height: 1.8;
+  color: #666;
+}
+
+.infoGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 15px;
+}
+
+.infoItem {
+  font-size: 1rem;
+  color: var(--grooming-text);
+}
+
+.infoItem strong {
+  font-weight: 600;
+  margin-right: 10px;
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.tag {
+  background-color: var(--grooming-tag-bg);
+  color: var(--grooming-tag-text);
+  padding: 8px 15px;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  transition: all 0.2s ease-in-out;
+}
+
+.tag:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+/* --- Booking Box --- */
+.bookingBox {
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+  border: 1px solid #F0EBE8;
+}
+
+.bookingSummary {
+  padding: 24px;
+  text-align: center;
+  border-bottom: 1px solid #F0EBE8;
+}
+
+.price {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--grooming-primary);
+  margin: 0 0 16px;
+}
+
+.bookingActions {
+  padding: 24px;
+}
+
+.bookingButton {
+  width: 100%;
+  padding: 15px;
+  font-size: 1.1rem;
+  background-color: var(--grooming-primary);
+  border-color: var(--grooming-primary);
+}
+
+/* --- Not Found / Error --- */
+.notFound {
+  text-align: center;
+  padding: 80px 24px;
+  min-height: 60vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.notFound h2 {
+  font-size: 1.8rem;
+  color: #333;
+  margin-bottom: 16px;
+}
+
+/* --- Responsive --- */
+@media (max-width: 900px) {
+  .mainContent {
+    flex-direction: column;
+    margin-top: -60px;
+  }
+  .bookingColumn {
+    position: static;
+    width: 100%;
+  }
+  .heroContent h1 {
+    font-size: 2.8rem;
+  }
+}
