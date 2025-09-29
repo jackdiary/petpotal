@@ -19,6 +19,7 @@
     "mysql": "^2.18.1",
     "mysql2": "^3.14.5",
     "react": "^19.1.1",
+    "react-chatbot-kit": "^2.2.2",
     "react-datepicker": "^8.7.0",
     "react-dom": "^19.1.1",
     "react-responsive-carousel": "^3.2.23",

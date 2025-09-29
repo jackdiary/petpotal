@@ -8,7 +8,7 @@
 // 또한, 성능 최적화를 위해 대부분의 페이지 컴포넌트를 `React.lazy`를 사용하여 지연 로딩합니다.
 
 // --- IMPORT ---
-import React, { Suspense, lazy } from 'react'; // React의 핵심 기능 및 코드 분할을 위한 lazy, Suspense
+import React, { Suspense, lazy, useState } from 'react'; // React의 핵심 기능 및 코드 분할을 위한 lazy, Suspense
 import { Routes, Route, Navigate, useLocation } from 'react-router-dom'; // 라우팅 관련 훅 및 컴포넌트
 import { ToastContainer } from 'react-toastify'; // 알림 메시지 표시를 위한 라이브러리
 import 'react-toastify/dist/ReactToastify.css'; // Toastify 스타일
@@ -35,6 +35,10 @@ import AdminProtectedRoute from './providers/AdminProtectedRoute'; // 관리자 
 import UserProfile from './components/profile/UserProfile'; // 사용자 프로필 모달
 import PetProfile from './components/profile/PetProfile'; // 반려동물 프로필 모달
 import AddPetForm from './components/profile/AddPetForm'; // 반려동물 추가 폼 모달
+
+// --- Chatbot Components ---
+import ChatbotComponent from './components/chatbot/ChatbotComponent';
+import ChatbotIcon from './components/chatbot/ChatbotIcon';
 
 // --- Service Pages (서비스 페이지 - 직접 import 또는 Lazy Loading) ---
 // 일부 페이지는 초기 로딩을 위해 직접 import하고, 나머지는 성능 최적화를 위해 지연 로딩합니다.
@@ -74,9 +78,14 @@ function AppContent() {
   const location = useLocation(); // 현재 URL 경로 정보를 가져옵니다.
   const { isLoading } = useUI(); // 전역 UI 로딩 상태를 가져옵니다.
   const { isMaintenanceMode } = useMaintenance(); // 유지보수 모드 상태를 가져옵니다.
+  const [showChatbot, setShowChatbot] = useState(false);
 
   // 현재 경로가 관리자 경로인지 확인합니다.
   const isAdminRoute = location.pathname.startsWith('/admin');
+
+  const toggleChatbot = () => {
+    setShowChatbot(prev => !prev);
+  }
 
   // 유지보수 모드이고 현재 경로가 관리자 경로가 아니라면 유지보수 페이지를 렌더링합니다.
   if (isMaintenanceMode && !isAdminRoute) {
@@ -183,6 +192,13 @@ function AppContent() {
       <AddPetForm />
       <PetProfile />
       <UserProfile />
+
+      <ChatbotIcon onClick={toggleChatbot} />
+      {showChatbot && (
+        <div style={{ position: 'fixed', bottom: '100px', right: '30px', zIndex: 1000 }}>
+          <ChatbotComponent />
+        </div>
+      )}
     </div>
   );
 }

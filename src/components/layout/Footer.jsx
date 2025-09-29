@@ -142,7 +142,7 @@ const Footer = () => {
         <div className={styles.footerBottom}>
           <div className={styles.companyInfo}>
             <p>
-              (주)펫포탈 | 대표: 홍길동 | 사업자등록번호: 123-45-67890<br />
+              (주)펫포탈 | 대표: 오상호 | 사업자등록번호: 123-45-67890<br />
               주소: 서울특별시 강남구 삼성동 143-42 | 통신판매업신고: 2024-서울강남-1234
             </p>
           </div>
