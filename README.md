@@ -1,3 +1,5 @@
+<img width="1880" height="817" alt="image" src="https://github.com/user-attachments/assets/77097f1f-4e29-4d24-ac4a-f97e894ec916" />
+
 # PetPortal - 반려동물 종합 케어 플랫폼
 
 반려동물을 위한 종합 케어 서비스 플랫폼입니다. 미용, 병원, 호텔, 카페 등 다양한 서비스를 제공하며, 커뮤니티 기능을 포함합니다.
